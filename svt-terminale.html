@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Révisions Spécialité SVT Terminale 2025-2026</title>
+  <style>
+    :root {
+      --ink: #17231e;
+      --muted: #65736d;
+      --paper: #fbfff9;
+      --line: #d7e2d8;
+      --leaf: #1f8a5b;
+      --leaf-soft: #e7f6ee;
+      --ocean: #2563eb;
+      --ocean-soft: #eaf1ff;
+      --clay: #a6552f;
+      --sun: #f3b83f;
+      --red: #c2413b;
+      --red-soft: #fdebea;
+      --shadow: 0 18px 42px rgba(23, 35, 30, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(31,138,91,.13), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(37,99,235,.10), transparent 26%),
+        linear-gradient(180deg, #fbfff9 0%, #f4faf7 46%, #fffdf7 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: rgba(251,255,249,.90);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(23,35,30,.12);
+    }
+
+    .topbar .shell {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .mark {
+      width: 36px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--leaf);
+      color: white;
+      box-shadow: 0 10px 22px rgba(31,138,91,.24);
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      max-width: 76%;
+      padding: 7px 0;
+      scrollbar-width: thin;
+    }
+
+    nav a {
+      flex: 0 0 auto;
+      padding: 8px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    nav a:hover, nav a:focus-visible {
+      background: var(--leaf-soft);
+      color: var(--ink);
+      outline: none;
+    }
+
+    header {
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid rgba(23,35,30,.12);
+      padding: 80px 0 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 980px;
+      font-size: clamp(2.45rem, 5.7vw, 5.7rem);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .btn, .mini-btn {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 850;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn { min-height: 44px; padding: 11px 15px; }
+    .btn.primary { background: var(--leaf); color: white; box-shadow: 0 12px 26px rgba(31,138,91,.24); }
+    .btn.secondary { background: white; border-color: var(--line); }
+    .mini-btn { min-height: 38px; padding: 8px 11px; background: var(--ink); color: white; }
+
+    .mission {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(23,35,30,.14);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .mission-visual {
+      height: 148px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(31,138,91,.85), rgba(37,99,235,.78)),
+        repeating-linear-gradient(45deg, transparent 0 14px, rgba(255,255,255,.15) 14px 15px);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 3.8rem;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: #f7fbf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .stat strong { display: block; font-size: 1.35rem; line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: .86rem; }
+
+    main { padding: 42px 0 74px; }
+    .section-title { margin: 50px 0 18px; display: flex; justify-content: space-between; gap: 18px; align-items: end; }
+    .section-title h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1; }
+    .section-title p { margin: 8px 0 0; color: var(--muted); max-width: 740px; }
+
+    .chapter {
+      margin-top: 24px;
+      border: 1px solid rgba(23,35,30,.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,.76);
+      box-shadow: 0 10px 28px rgba(23,35,30,.07);
+      overflow: hidden;
+    }
+
+    .chapter-head {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      padding: 22px;
+      background: linear-gradient(90deg, rgba(31,138,91,.11), rgba(166,85,47,.09));
+      border-bottom: 1px solid rgba(23,35,30,.10);
+    }
+
+    .badge {
+      width: 56px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      font-size: 1.2rem;
+    }
+
+    .chapter h3 { margin: 0; font-size: clamp(1.32rem, 2vw, 2rem); line-height: 1.12; }
+    .chapter-head p { margin: 6px 0 0; color: var(--muted); }
+    .pill {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: .84rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .chapter-body {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 18px;
+    }
+
+    .box, .exercise, .memory-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 16px;
+    }
+
+    .box { margin-bottom: 12px; }
+    .box h4, .exercise h4 { margin: 0 0 8px; }
+    .box h4 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .box ul, .memory-card ul { margin: 8px 0 0; padding-left: 20px; }
+    .example { background: #fff8e8; border-color: #f1d493; }
+    .method { background: var(--ocean-soft); border-color: #c7d8ff; }
+
+    .exercise {
+      background: #fbfdfc;
+      margin-bottom: 12px;
+    }
+
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .exercise h4 {
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .type {
+      flex: 0 0 auto;
+      font-size: .76rem;
+      font-weight: 950;
+      color: var(--leaf);
+      background: var(--leaf-soft);
+      border: 1px solid #bde5ce;
+      padding: 5px 7px;
+      border-radius: 6px;
+    }
+
+    .choices { display: grid; gap: 8px; margin-top: 12px; }
+    .choice {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      cursor: pointer;
+    }
+    .choice:hover { border-color: #9db5a4; }
+    .choice input { margin-top: 2px; accent-color: var(--leaf); }
+    .choice.correct { border-color: #91d3b9; background: var(--leaf-soft); }
+    .choice.wrong { border-color: #efb0ad; background: var(--red-soft); }
+
+    .check-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    .progress-note { color: var(--muted); font-size: .86rem; }
+    .feedback {
+      display: none;
+      margin-top: 12px;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .feedback.show { display: block; }
+    .feedback.good { border-color: #91d3b9; background: var(--leaf-soft); }
+    .feedback.bad { border-color: #efb0ad; background: var(--red-soft); }
+    .feedback strong { display: block; margin-bottom: 4px; }
+
+    .memo-final {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .memory-card { min-height: 178px; }
+    .memory-card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+
+    footer {
+      border-top: 1px solid rgba(23,35,30,.12);
+      padding: 24px 0 42px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .source-box {
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    @media (max-width: 920px) {
+      nav { max-width: 58%; }
+      .hero, .chapter-body, .memo-final { grid-template-columns: 1fr; }
+      header { min-height: auto; }
+      .chapter-head { grid-template-columns: 48px minmax(0,1fr); }
+      .chapter-head .pill { grid-column: 2; justify-self: start; }
+      .badge { width: 48px; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 20px, 1180px); }
+      .topbar .shell { flex-direction: column; align-items: start; padding: 9px 0; }
+      nav { max-width: 100%; width: 100%; }
+      header { padding-top: 126px; }
+      .score-row { grid-template-columns: 1fr; }
+      .chapter-head, .chapter-body { padding: 15px; }
+      .section-title { display: block; }
+      .mission-visual { height: 118px; font-size: 3rem; }
+    }
+
+    @media print {
+      .topbar, .hero-actions, .check-row { display: none; }
+      header { min-height: auto; }
+      .hero, .chapter-body, .memo-final { grid-template-columns: 1fr; }
+      .feedback { display: block; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell">
+      <div class="brand"><span class="mark">SVT</span><span>Spé SVT terminale</span></div>
+      <nav id="nav" aria-label="Navigation des notions"></nav>
+    </div>
+  </div>
+
+  <header>
+    <div class="shell hero">
+      <section>
+        <h1>Réviser la spécialité SVT avec méthode et curiosité.</h1>
+        <p>Des fiches mémos, des exemples concrets, des QCM et des corrections guidées pour transformer les notions en réflexes de bac.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#genetique">Commencer</a>
+          <a class="btn secondary" href="#memo">Mémo final</a>
+          <button class="btn secondary" type="button" id="resetBtn">Réinitialiser le score</button>
+        </div>
+      </section>
+      <aside class="mission" aria-label="Progression">
+        <div class="mission-visual">ADN</div>
+        <p style="margin:14px 0 0;color:var(--muted);">Lis la correction même quand tu as juste : c'est là que se construisent les phrases scientifiques qui font gagner des points.</p>
+        <div class="score-row">
+          <div class="stat"><strong id="doneCount">0</strong><span>exercices tentés</span></div>
+          <div class="stat"><strong id="rightCount">0</strong><span>réponses justes</span></div>
+          <div class="stat"><strong id="pctCount">0%</strong><span>progression</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section-title">
+      <div>
+        <h2>Parcours de révision</h2>
+        <p>Le programme est organisé autour de la Terre, du vivant, des enjeux contemporains et du corps humain. Chaque notion associe connaissances, raisonnement et vocabulaire précis.</p>
+      </div>
+    </div>
+    <div id="chapters"></div>
+
+    <section id="memo">
+      <div class="section-title">
+        <div>
+          <h2>Mémo final pour réussir le bac SVT</h2>
+          <p>À apprendre, mais surtout à pratiquer : en SVT, la méthode de preuve compte autant que les connaissances.</p>
+        </div>
+      </div>
+      <div class="memo-final">
+        <article class="memory-card"><h3>1. Construire une réponse scientifique</h3><ul><li>Je pars des documents.</li><li>Je cite une donnée précise.</li><li>J'interprète avec une notion du cours.</li><li>Je conclus en répondant à la question.</li></ul></article>
+        <article class="memory-card"><h3>2. Maîtriser les verbes de consigne</h3><ul><li>Décrire : dire ce que l'on observe.</li><li>Expliquer : relier cause et conséquence.</li><li>Comparer : points communs et différences.</li><li>Argumenter : données + connaissances.</li></ul></article>
+        <article class="memory-card"><h3>3. Penser échelles</h3><ul><li>Molécule : ADN, protéines, hormones.</li><li>Cellule : neurone, fibre musculaire, cellule immunitaire.</li><li>Organisme : mouvement, stress, santé.</li><li>Planète : climat, tectonique, biodiversité.</li></ul></article>
+        <article class="memory-card"><h3>4. Utiliser les bons schémas</h3><ul><li>Arbre de parenté ou arbre de transmission.</li><li>Coupe de plante ou schéma fonctionnel.</li><li>Arc réflexe et synapse.</li><li>Cycle du carbone et rétroactions climatiques.</li></ul></article>
+        <article class="memory-card"><h3>5. Éviter les pièges fréquents</h3><ul><li>Corrélation ne signifie pas causalité.</li><li>Une mutation n'est pas toujours visible.</li><li>Un modèle simplifie la réalité.</li><li>Une moyenne cache parfois des variations.</li></ul></article>
+        <article class="memory-card"><h3>6. Le jour de l'épreuve</h3><ul><li>Repère le type d'exercice.</li><li>Note les mots-clés avant de rédiger.</li><li>Soigne titres, unités et légendes.</li><li>Garde du temps pour relire les conclusions.</li></ul></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell source-box">
+      Contenu construit pour la spécialité sciences de la vie et de la Terre en terminale générale 2025-2026, à partir des grands axes publics du programme : Terre, vie et évolution du vivant ; enjeux contemporains de la planète ; corps humain et santé. À compléter avec les documents et exigences de ton professeur.
+    </div>
+  </footer>
+
+  <script>
+    const chapters = [
+      {
+        id: "genetique", nav: "Génétique", tag: "Vivant", title: "Génétique et origine du génotype",
+        intro: "Comprendre comment le génotype d'un individu se forme, se transmet et se modifie.",
+        recall: "Le génotype résulte de l'information portée par l'ADN, transmise par les gamètes puis recombinée lors de la fécondation. Les mutations créent de nouveaux allèles.",
+        keep: ["La méiose forme des gamètes haploïdes différents.", "Le brassage interchromosomique et intrachromosomique augmente la diversité.", "La fécondation réunit au hasard deux gamètes.", "Une mutation peut être neutre, défavorable ou avantageuse selon le contexte."],
+        example: "Deux parents hétérozygotes pour un gène peuvent avoir des enfants aux génotypes différents, car chaque gamète ne reçoit qu'un seul allèle.",
+        exercises: [
+          {type:"Choix simple", q:"Lors de la méiose, une cellule diploïde produit généralement :", choices:["2 cellules diploïdes identiques","4 cellules haploïdes génétiquement différentes","4 cellules diploïdes identiques"], a:["b"], c:"La méiose divise par deux le nombre de chromosomes et produit des gamètes différents. Au bac, relie toujours méiose, haploïdie et brassage génétique."},
+          {type:"Choix multiple", q:"Qu'est-ce qui contribue à la diversité génétique des descendants ?", choices:["Le crossing-over","La fécondation au hasard","La copie toujours parfaite de l'ADN"], a:["a","b"], c:"Le crossing-over échange des fragments de chromatides et la fécondation réunit deux gamètes de manière aléatoire. La copie parfaite ne crée pas de diversité."},
+          {type:"Choix simple", q:"Une mutation est :", choices:["une modification de la séquence d'ADN","toujours une maladie","un changement volontaire de l'organisme"], a:["a"], c:"Une mutation est une modification de la séquence d'ADN. Ses effets dépendent du gène touché, de l'environnement et du hasard de transmission."}
+        ]
+      },
+      {
+        id: "evolution", nav: "Évolution", tag: "Vivant", title: "Évolution des populations et biodiversité",
+        intro: "Relier diversité génétique, sélection naturelle, dérive génétique et histoire du vivant.",
+        recall: "Une population évolue quand les fréquences des allèles changent au fil des générations. La sélection naturelle et la dérive génétique sont deux mécanismes majeurs.",
+        keep: ["La sélection favorise les caractères qui augmentent le succès reproducteur dans un milieu donné.", "La dérive génétique est forte dans les petites populations.", "L'évolution n'a pas de but.", "Les arbres phylogénétiques traduisent des parentés à partir de caractères partagés."],
+        example: "Dans un milieu sombre, des individus mieux camouflés peuvent être moins prédatés : leurs allèles deviennent plus fréquents si le caractère est héréditaire.",
+        exercises: [
+          {type:"Choix simple", q:"La dérive génétique correspond à :", choices:["un changement aléatoire des fréquences alléliques","une amélioration obligatoire des espèces","la disparition de toutes les mutations"], a:["a"], c:"La dérive génétique est liée au hasard de reproduction et d'échantillonnage. Elle est particulièrement visible dans les petits effectifs."},
+          {type:"Choix multiple", q:"Pour parler de sélection naturelle, il faut généralement :", choices:["une variation entre individus","un caractère héréditaire","un avantage dans un environnement donné"], a:["a","b","c"], c:"La sélection nécessite une variation, une héritabilité et une différence de succès reproducteur. Ces trois idées forment une excellente phrase de bac."},
+          {type:"Choix simple", q:"Un arbre de parenté indique surtout :", choices:["qui est le plus fort","des relations de parenté fondées sur des caractères partagés","l'âge exact de chaque espèce"], a:["b"], c:"Un arbre phylogénétique représente des hypothèses de parenté. Il ne classe pas les êtres vivants du plus simple au plus évolué."}
+        ]
+      },
+      {
+        id: "geologie", nav: "Géologie", tag: "Terre", title: "Passé géologique de la Terre",
+        intro: "Utiliser les roches comme archives pour reconstituer l'histoire de la planète.",
+        recall: "Les roches enregistrent des événements : dépôts, déformations, magmatisme, métamorphisme. On peut les dater de manière relative ou absolue.",
+        keep: ["Principe de superposition : une couche est plus récente que celle qu'elle recouvre, hors déformation.", "Principe de recoupement : ce qui recoupe est plus récent.", "La radiochronologie utilise la décroissance d'éléments radioactifs.", "Les chaînes de montagnes gardent les traces de collisions anciennes."],
+        example: "Un granite qui traverse des couches sédimentaires est plus récent que ces couches, car il les recoupe.",
+        exercises: [
+          {type:"Choix simple", q:"Si une faille coupe une couche sédimentaire, la faille est :", choices:["plus ancienne que la couche","du même âge exactement","plus récente que la couche"], a:["c"], c:"Selon le principe de recoupement, un événement qui en coupe un autre est plus récent. C'est un réflexe essentiel en datation relative."},
+          {type:"Choix multiple", q:"Quelles méthodes peuvent aider à reconstituer le passé géologique ?", choices:["Observer les fossiles","Étudier les déformations des roches","Ignorer l'ordre des couches"], a:["a","b"], c:"Fossiles, structures, minéraux et relations géométriques sont des indices. L'ordre des couches est au contraire une information centrale."},
+          {type:"Choix simple", q:"La radiochronologie repose sur :", choices:["la couleur des roches","la décroissance radioactive mesurable","la température actuelle de l'air"], a:["b"], c:"La radiochronologie mesure les proportions d'éléments radioactifs et de produits de désintégration. Elle donne un âge absolu si le système est bien choisi."}
+        ]
+      },
+      {
+        id: "plantes", nav: "Plantes", tag: "Planète", title: "De la plante sauvage à la plante domestiquée",
+        intro: "Comprendre le fonctionnement des plantes à fleurs et leur domestication par l'humain.",
+        recall: "Les plantes produisent leur matière organique par photosynthèse, transportent eau et sucres, se reproduisent et interagissent avec leur environnement.",
+        keep: ["La photosynthèse utilise CO2, eau et lumière pour produire de la matière organique.", "Les stomates permettent les échanges gazeux mais favorisent aussi les pertes d'eau.", "La pollinisation et la dissémination peuvent dépendre d'animaux.", "La domestication sélectionne des caractères utiles à l'humain."],
+        example: "Le maïs cultivé possède des grains nombreux et attachés à l'épi : ce caractère résulte d'une sélection artificielle progressive.",
+        exercises: [
+          {type:"Choix simple", q:"La photosynthèse produit principalement :", choices:["de la matière organique à partir de matière minérale","du dioxygène sans lumière","des roches sédimentaires"], a:["a"], c:"La plante transforme matière minérale et énergie lumineuse en matière organique. C'est la base de sa place de producteur primaire."},
+          {type:"Choix multiple", q:"Quels éléments participent à la nutrition d'une plante ?", choices:["Absorption d'eau par les racines","Entrée de CO2 par les feuilles","Absorption directe de glucose dans le sol comme source principale"], a:["a","b"], c:"Les racines absorbent eau et ions minéraux, les feuilles captent le CO2. Le glucose est surtout produit par photosynthèse puis distribué."},
+          {type:"Choix simple", q:"La domestication d'une plante correspond à :", choices:["une sélection de caractères par l'humain","une disparition de tous les gènes","une transformation immédiate sans reproduction"], a:["a"], c:"La domestication est une sélection artificielle sur plusieurs générations. Elle modifie les fréquences de caractères recherchés."}
+        ]
+      },
+      {
+        id: "climat", nav: "Climat", tag: "Planète", title: "Climats passés, climat actuel et actions humaines",
+        intro: "Relier archives climatiques, effet de serre et enjeux du réchauffement.",
+        recall: "Le climat varie naturellement, mais le réchauffement actuel est très fortement lié aux émissions humaines de gaz à effet de serre.",
+        keep: ["Les glaces, sédiments et pollens sont des archives climatiques.", "CO2, CH4 et N2O renforcent l'effet de serre.", "Les modèles climatiques testent des scénarios d'émissions.", "Atténuation et adaptation sont deux réponses complémentaires."],
+        example: "Les bulles d'air piégées dans les carottes de glace permettent d'estimer la composition ancienne de l'atmosphère.",
+        exercises: [
+          {type:"Choix simple", q:"Une carotte de glace peut renseigner sur :", choices:["la composition passée de l'atmosphère","la note d'un élève","le génotype exact d'une plante actuelle"], a:["a"], c:"Les bulles d'air et les isotopes des glaces sont des archives climatiques. Elles permettent de comparer passé et présent."},
+          {type:"Choix multiple", q:"Quels gaz renforcent l'effet de serre ?", choices:["CO2","CH4","N2O"], a:["a","b","c"], c:"Ces trois gaz absorbent une partie du rayonnement infrarouge émis par la Terre. Leur augmentation modifie le bilan énergétique."},
+          {type:"Choix simple", q:"Planter des arbres, isoler les bâtiments et réduire les émissions sont surtout des actions :", choices:["d'atténuation","de datation relative","de brassage chromosomique"], a:["a"], c:"L'atténuation vise à limiter l'ampleur du changement climatique en réduisant les émissions ou en augmentant les puits de carbone."}
+        ]
+      },
+      {
+        id: "nerveux", nav: "Nerveux", tag: "Santé", title: "Système nerveux, réflexes et mouvement volontaire",
+        intro: "Comprendre comment l'organisme reçoit, traite et produit une commande motrice.",
+        recall: "Un message nerveux circule dans des neurones et se transmet au niveau des synapses. Les réflexes mobilisent des circuits rapides, tandis que le mouvement volontaire implique le cerveau.",
+        keep: ["Un réflexe myotatique protège le muscle et participe au maintien de la posture.", "La synapse transforme un message électrique en message chimique puis électrique.", "Le cortex moteur participe à la commande volontaire.", "Certaines substances perturbent la transmission synaptique."],
+        example: "Le réflexe rotulien met en jeu un récepteur, un neurone sensitif, la moelle épinière, un neurone moteur et un muscle effecteur.",
+        exercises: [
+          {type:"Choix simple", q:"Dans un réflexe, le centre nerveux peut être :", choices:["la moelle épinière","le foie","un os"], a:["a"], c:"Un arc réflexe peut être traité au niveau de la moelle épinière, ce qui explique sa rapidité. Le cerveau peut ensuite être informé."},
+          {type:"Choix multiple", q:"Une synapse met en jeu :", choices:["un neurone présynaptique","des neurotransmetteurs","une transmission toujours sans molécule"], a:["a","b"], c:"À la synapse chimique, le neurone présynaptique libère des neurotransmetteurs qui agissent sur la cellule postsynaptique."},
+          {type:"Choix simple", q:"Le mouvement volontaire est principalement commandé par :", choices:["le cortex moteur","les stomates","les plaques tectoniques"], a:["a"], c:"Le cortex moteur élabore une commande transmise aux muscles. Les documents d'imagerie cérébrale peuvent appuyer cette idée."}
+        ]
+      },
+      {
+        id: "muscle", nav: "Muscle", tag: "Santé", title: "Muscle, ATP et contrôle du glucose",
+        intro: "Relier contraction musculaire, énergie cellulaire et régulation de la glycémie.",
+        recall: "Le muscle transforme l'énergie chimique de l'ATP en mouvement. L'ATP doit être régénérée grâce aux nutriments, notamment le glucose.",
+        keep: ["La contraction repose sur l'interaction actine-myosine.", "L'ATP est indispensable mais stockée en faible quantité.", "La respiration cellulaire produit beaucoup d'ATP en présence de dioxygène.", "Insuline et glucagon participent au contrôle de la glycémie."],
+        example: "Après un repas, l'insuline favorise le stockage du glucose, notamment sous forme de glycogène dans le foie et les muscles.",
+        exercises: [
+          {type:"Choix simple", q:"La molécule directement utilisée par la contraction musculaire est :", choices:["l'ATP","l'ADN","le dioxyde de carbone"], a:["a"], c:"L'ATP fournit l'énergie directement utilisable par les protéines contractiles. Elle doit être régénérée en permanence."},
+          {type:"Choix multiple", q:"Après un repas riche en glucides, on peut observer :", choices:["une augmentation de la glycémie","une sécrétion d'insuline","un stockage sous forme de glycogène"], a:["a","b","c"], c:"La glycémie augmente, puis l'insuline favorise l'entrée et le stockage du glucose. C'est une boucle de régulation."},
+          {type:"Choix simple", q:"La respiration cellulaire nécessite notamment :", choices:["du dioxygène et du glucose","du granite et des fossiles","des neurotransmetteurs uniquement"], a:["a"], c:"La respiration cellulaire oxyde des nutriments en présence de dioxygène pour produire de l'ATP. Elle est majeure lors d'un effort durable."}
+        ]
+      },
+      {
+        id: "stress", nav: "Stress", tag: "Santé", title: "Stress aigu, stress chronique et santé",
+        intro: "Distinguer une réponse adaptative rapide d'un dérèglement durable.",
+        recall: "Le stress aigu aide l'organisme à faire face à une situation. S'il devient chronique, il peut perturber le fonctionnement de l'organisme.",
+        keep: ["Le stress aigu mobilise le système nerveux autonome et des hormones.", "Adrénaline et cortisol participent à la réponse au stress.", "Le stress chronique peut dérégler certains systèmes.", "Des stratégies comportementales et médicales peuvent limiter les effets."],
+        example: "Avant une épreuve, l'augmentation du rythme cardiaque prépare l'organisme à l'action ; si l'alerte dure trop, elle devient coûteuse.",
+        exercises: [
+          {type:"Choix simple", q:"Le stress aigu est d'abord :", choices:["une réponse adaptative de l'organisme","une mutation génétique","une preuve de dérive génétique"], a:["a"], c:"Le stress aigu prépare l'organisme à réagir. Il devient problématique surtout lorsqu'il s'installe durablement."},
+          {type:"Choix multiple", q:"Quelles molécules peuvent intervenir dans la réponse au stress ?", choices:["Adrénaline","Cortisol","Chlorophylle comme hormone humaine"], a:["a","b"], c:"Adrénaline et cortisol sont impliqués dans les réponses au stress. La chlorophylle est un pigment de plante, pas une hormone humaine."},
+          {type:"Choix simple", q:"Un stress chronique peut :", choices:["perturber l'équilibre de l'organisme","améliorer toujours la santé","arrêter la tectonique des plaques"], a:["a"], c:"Le stress chronique maintient des réponses biologiques dans la durée. Il peut avoir des conséquences sur sommeil, immunité, métabolisme ou humeur."}
+        ]
+      }
+    ];
+
+    const nav = document.getElementById("nav");
+    const chaptersRoot = document.getElementById("chapters");
+    const state = new Map();
+
+    function esc(text) {
+      return String(text).replace(/[&<>"']/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[char]));
+    }
+
+    function render() {
+      nav.innerHTML = chapters.map(chapter => `<a href="#${chapter.id}">${esc(chapter.nav)}</a>`).join("") + `<a href="#memo">Mémo bac</a>`;
+      chaptersRoot.innerHTML = chapters.map((chapter, chapterIndex) => `
+        <section class="chapter" id="${chapter.id}">
+          <div class="chapter-head">
+            <div class="badge">${chapterIndex + 1}</div>
+            <div><h3>${esc(chapter.title)}</h3><p>${esc(chapter.intro)}</p></div>
+            <span class="pill">${esc(chapter.tag)}</span>
+          </div>
+          <div class="chapter-body">
+            <div>
+              <div class="box"><h4>Bref rappel</h4><p>${esc(chapter.recall)}</p></div>
+              <div class="box"><h4>À retenir</h4><ul>${chapter.keep.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div>
+              <div class="box example"><h4>Exemple</h4><p>${esc(chapter.example)}</p></div>
+              <div class="box method"><h4>Réflexe bac</h4><p>Dans ta copie, associe toujours une observation précise, une connaissance du cours et une conclusion explicite.</p></div>
+            </div>
+            <div>
+              ${chapter.exercises.map((exercise, exerciseIndex) => exerciseTemplate(exercise, `${chapterIndex}-${exerciseIndex}`)).join("")}
+            </div>
+          </div>
+        </section>
+      `).join("");
+    }
+
+    function exerciseTemplate(exercise, id) {
+      const inputType = exercise.a.length > 1 ? "checkbox" : "radio";
+      return `
+        <div class="exercise" data-id="${id}" data-answer="${exercise.a.join(",")}">
+          <div class="exercise-header"><h4>${esc(exercise.q)}</h4><span class="type">${esc(exercise.type)}</span></div>
+          <div class="choices">
+            ${exercise.choices.map((choice, index) => {
+              const value = String.fromCharCode(97 + index);
+              return `<label class="choice"><input type="${inputType}" name="q-${id}" value="${value}">${esc(choice)}</label>`;
+            }).join("")}
+          </div>
+          <div class="check-row"><button class="mini-btn" type="button">Corriger</button><span class="progress-note"></span></div>
+          <div class="feedback"><p>${esc(exercise.c)}</p></div>
+        </div>`;
+    }
+
+    function selectedValues(exercise) {
+      return Array.from(exercise.querySelectorAll("input:checked")).map(input => input.value).sort();
+    }
+
+    function expectedValues(exercise) {
+      return exercise.dataset.answer.split(",").sort();
+    }
+
+    function sameSet(a, b) {
+      return a.length === b.length && a.every((value, index) => value === b[index]);
+    }
+
+    function updateScore() {
+      const total = document.querySelectorAll(".exercise").length;
+      const attempted = Array.from(state.values());
+      const done = attempted.length;
+      const right = attempted.filter(Boolean).length;
+      const pct = total ? Math.round((right / total) * 100) : 0;
+      document.getElementById("doneCount").textContent = done;
+      document.getElementById("rightCount").textContent = right;
+      document.getElementById("pctCount").textContent = pct + "%";
+    }
+
+    function markChoices(exercise, chosen, expected) {
+      exercise.querySelectorAll(".choice").forEach(label => {
+        const value = label.querySelector("input").value;
+        label.classList.toggle("correct", expected.includes(value));
+        label.classList.toggle("wrong", chosen.includes(value) && !expected.includes(value));
+      });
+    }
+
+    render();
+
+    document.querySelectorAll(".exercise").forEach(exercise => {
+      const button = exercise.querySelector(".mini-btn");
+      const feedback = exercise.querySelector(".feedback");
+      const note = exercise.querySelector(".progress-note");
+      button.addEventListener("click", () => {
+        const chosen = selectedValues(exercise);
+        const expected = expectedValues(exercise);
+        if (!chosen.length) {
+          note.textContent = "Choisis au moins une réponse.";
+          return;
+        }
+        const isRight = sameSet(chosen, expected);
+        state.set(exercise.dataset.id, isRight);
+        feedback.querySelector(".result-title")?.remove();
+        feedback.insertAdjacentHTML("afterbegin", `<strong class="result-title">${isRight ? "Bonne réponse." : "À corriger."}</strong>`);
+        feedback.classList.add("show");
+        feedback.classList.toggle("good", isRight);
+        feedback.classList.toggle("bad", !isRight);
+        markChoices(exercise, chosen, expected);
+        note.textContent = isRight ? "Validé" : "Relis l'explication et repère le mot-clé.";
+        updateScore();
+      });
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      state.clear();
+      document.querySelectorAll(".exercise").forEach(exercise => {
+        exercise.querySelectorAll("input").forEach(input => { input.checked = false; });
+        exercise.querySelectorAll(".choice").forEach(label => label.classList.remove("correct", "wrong"));
+        const feedback = exercise.querySelector(".feedback");
+        feedback.classList.remove("show", "good", "bad");
+        feedback.querySelector(".result-title")?.remove();
+        exercise.querySelector(".progress-note").textContent = "";
+      });
+      updateScore();
+    });
+  </script>
+</body>
+</html>
